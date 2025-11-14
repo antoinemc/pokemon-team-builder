@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="left-container">
+    <h3>Choissisez vos pokémons</h3>
+    <div class="pokemon-grid">
+      @for (pokemon of pokemonList(); track pokemon?.pokedex_id) {
+        <app-pokemon-item [pokemon]="pokemon">
+        </app-pokemon-item>
+      } @empty {
+        <p>Aucun Pokémon trouvé.</p>
+      }
+    </div>
+  </div>
+
+  <div class="right-container">
+    <div class="pokemon-picked">
+      <p>Ma liste de pokémon</p>
+      @for (pokemon of pokemonPickedList(); track pokemon?.pokedex_id) {
+        <app-pokemon-item [pokemon]="pokemon">
+        </app-pokemon-item>
+      } @empty {
+        <p>Aucun Pokémon ajouté.</p>
+      }
+    </div>
+  </div>
+</div>

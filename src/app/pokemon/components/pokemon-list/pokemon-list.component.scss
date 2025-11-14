@@ -1,0 +1,35 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  .pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    width: 100%
+  }
+}
+
+.right-container {
+  margin-left: 32px;
+  position: relative;
+  width: 20%;
+  border-left: 1px solid #ccc;
+  background-color:#f5f3fa;
+  padding: 0 10px;
+  .pokemon-picked {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 25px;
+
+    overflow: auto;
+    height: calc(100% - 40px);
+  }
+}

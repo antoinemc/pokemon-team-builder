@@ -1,0 +1,13 @@
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { PokemonListComponent } from "./pokemon/components/pokemon-list/pokemon-list.component";
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, PokemonListComponent],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+})
+export class App {
+  protected readonly title = signal('pokemon-list');
+}
