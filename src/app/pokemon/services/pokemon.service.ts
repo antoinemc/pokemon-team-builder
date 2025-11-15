@@ -1,6 +1,5 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ToastrService } from 'ngx-toastr';
 
 export interface Pokemon {
   pokedex_id: number,
@@ -16,7 +15,6 @@ export class PokemonService {
 
 constructor() {}
 private http = inject(HttpClient);
-private toastrService = inject(ToastrService);
 private API_URL = 'https://tyradex.app/api/v1/gen/1';
 
 private pokemonListSignal = signal<Pokemon[]>([]);
@@ -24,6 +22,14 @@ public pokemonList = this.pokemonListSignal.asReadonly();
 
 private pokemonPickedListSignal = signal<Pokemon[]>([]);
 public pokemonPickedList = this.pokemonPickedListSignal.asReadonly();
+
+get teamSize() {
+  return this.pokemonPickedList().length;
+}
+
+get isTeamFull(): boolean {
+  return this.pokemonPickedList().length === 6
+}
 
 getPokemonList(): void {
   this.http.get<Pokemon[]>(this.API_URL)
@@ -41,15 +47,9 @@ getPokemonList(): void {
     if (this.pokemonPickedList().length >= 6) {
       return;
     };
-    
+
     if (!this.pokemonPickedList().some(p => p.pokedex_id === pokemon.pokedex_id)) {
       this.pokemonPickedListSignal.update(list => [...list, pokemon]);
-      this.showSuccessMessage('Pokémon Ajouté !')
-
-      if(this.pokemonPickedList().length >= 6) {
-        this.showSuccessMessage('Bravo ! Vous êtes un excellent dresseur !', 'Votre équipe est complète')
-      }
-
     }
   }
 
@@ -57,22 +57,9 @@ getPokemonList(): void {
     this.pokemonPickedListSignal.update(list =>
       list.filter(p => p.pokedex_id !== pokedexId)
     );
-    this.showSuccessMessage('Pokémon supprimé !')
-       if(!this.pokemonPickedList().length) {
-        this.showErrorMessage('Attrapez les tous !', 'Votre équipe est vide ! ')
-      }
   }
 
   isPicked(pokedexId: number): boolean {
     return this.pokemonPickedList().some(p => p.pokedex_id === pokedexId);
-  }
-
-
-  showSuccessMessage(title?: string, message?: string) {
-    this.toastrService.success(message, title)
-  }
-
-  showErrorMessage(title?: string, message?: string) {
-    this.toastrService.error(message, title)
   }
 }
