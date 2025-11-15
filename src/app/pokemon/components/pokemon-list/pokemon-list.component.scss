@@ -1,35 +1,111 @@
 .main-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+  background: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 0 16px;
+    gap: 32px;
+  }
 }
 
 .left-container {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  .pokemon-grid {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 0;
+
+  &__title {
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+  }
+
+  &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 16px;
-    padding: 16px;
-    width: 100%
+    padding: 8px;
+    height: auto;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+    }
+  }
+
+  &__emptymsg {
+    color: red;
   }
 }
 
 .right-container {
-  margin-left: 32px;
-  position: relative;
-  width: 20%;
-  border-left: 1px solid #ccc;
-  background-color:#f5f3fa;
-  padding: 0 10px;
-  .pokemon-picked {
+  width: 100%;
+  min-width: auto;
+  border-top: 2px solid #e0d4f5;
+  background: #f5f3fa;
+  padding: 20px;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 768px) {
+    width: 320px;
+    min-width: 280px;
+    border-left: 2px solid #e0d4f5;
+    border-top:none;
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+
+  }
+
+  &__title {
+    margin: 0 0 16px 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #5e3a9c;
+    text-align: center;
+  }
+
+  &__grid {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 25px;
+    gap: 12px;
+    overflow-y: auto;
+    padding-right: 8px;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #b8a4d9;
+      border-radius: 3px;
+    }
 
-    overflow: auto;
-    height: calc(100% - 40px);
+    @media (min-width: 768px) {
+      position: sticky;
+      top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      max-height: none;
+      overflow: visible;
+    }
+  }
+}
+
+app-pokemon-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translate3d(0, -4px, 0);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 }

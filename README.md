@@ -1,59 +1,37 @@
-# PokemonList
+# Pokémon Team Builder  
+**Angular 20 • Signals • Standalone Components • PokéAPI**
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+> Mini-application Angular 20 pour fetcher la liste des Pokémon via [PokéAPI](https://pokeapi.co) et constituer une **équipe de 6 Pokémon max** (liste à gauche, équipe à droite).  
+> Projet personnel d'apprentissage des features apparues dans Angular 18-20 (signals, resources, state management)
 
-## Development server
+---
 
-To start a local development server, run:
+## 🎯 Fonctionnalités
+
+- **Fetch automatique** : Charge la liste des 151 Pokémon (Gen 1) au démarrage via PokéAPI.
+- **Affichage liste** : Colonne gauche avec cards pour chaque Pokémon (nom + ID).
+- **Gestion d'équipe** : Colonne droite – add/delete via button reactif (max 6, avec validation et feedback UI)
+- **UI réactive** : Mise à jour instantanée (pas de re-renders inutiles grâce aux signals).
+- **Responsive** : Layout deux-colonnes (flexbox) qui s'adapte mobile/desktop.
+
+**Démos live idéales :** Load → Clic ajout (x6) → Tentative 7e bloquée → Suppression → Équipe vide.
+
+## 🚀 Lancer le Projet
+
+Prérequis : Node.js 20+ et Angular CLI 20+ (`npm i -g @angular/cli@20`).
 
 ```bash
+# Clone le repo
+git clone https://github.com/antoinemc/pokemon-team-builder.git
+cd pokemon-team-builder
+
+# Install deps
+npm install
+
+# Lancer l'application en local
 ng serve
-```
+# http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Tests unitaires
 ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
