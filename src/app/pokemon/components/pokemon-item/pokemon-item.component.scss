@@ -12,9 +12,11 @@
     image-rendering: pixelated;
   }
 
-  .button {
-    width: 60px;
-    height: 30px;
+  .pokemon-button {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
   }
   
 
