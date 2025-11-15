@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="left-container">
-    <h3>Choissisez vos pokémons</h3>
-    <div class="pokemon-grid">
+    <h3 class="left-container__title">Choissisez vos pokémons</h3>
+    <div class="left-container__grid">
       @for (pokemon of pokemonList(); track pokemon?.pokedex_id) {
         <app-pokemon-item [pokemon]="pokemon">
         </app-pokemon-item>
@@ -12,13 +12,13 @@
   </div>
 
   <div class="right-container">
-    <div class="pokemon-picked">
-      <p>Ma liste de pokémon</p>
+    <div class="right-container__grid">
+      <h4 class="left-container__title">Ma liste de pokémon</h4>
       @for (pokemon of pokemonPickedList(); track pokemon?.pokedex_id) {
         <app-pokemon-item [pokemon]="pokemon">
         </app-pokemon-item>
       } @empty {
-        <p>Aucun Pokémon ajouté.</p>
+        <p class="left-container__emptymsg">Aucun Pokémon ajouté.</p>
       }
     </div>
   </div>
