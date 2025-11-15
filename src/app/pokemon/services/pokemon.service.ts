@@ -23,6 +23,14 @@ public pokemonList = this.pokemonListSignal.asReadonly();
 private pokemonPickedListSignal = signal<Pokemon[]>([]);
 public pokemonPickedList = this.pokemonPickedListSignal.asReadonly();
 
+get teamSize() {
+  return this.pokemonPickedList().length;
+}
+
+get isTeamFull(): boolean {
+  return this.pokemonPickedList().length === 6
+}
+
 getPokemonList(): void {
   this.http.get<Pokemon[]>(this.API_URL)
   .subscribe((pokemon: any[]) => {
@@ -39,6 +47,7 @@ getPokemonList(): void {
     if (this.pokemonPickedList().length >= 6) {
       return;
     };
+
     if (!this.pokemonPickedList().some(p => p.pokedex_id === pokemon.pokedex_id)) {
       this.pokemonPickedListSignal.update(list => [...list, pokemon]);
     }

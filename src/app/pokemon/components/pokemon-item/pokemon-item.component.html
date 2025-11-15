@@ -6,8 +6,8 @@
   </p>
 
   @if (isPicked()) {
-    <button class="pokemon-button" (click)="deletePokemon()">Supprimer de ma liste</button>
+    <button class="pokemon-button" (click)="deletePokemon()">Retirer de mon équipe</button>
   } @else {
-    <button class="pokemon-button" (click)="addPokemon()" [disabled]="pokemonService.pokemonPickedList().length >= 6">Ajouter à ma liste</button>
+    <button class="pokemon-button" (click)="addPokemon()" [disabled]="pokemonService.pokemonPickedList().length >= 6">Ajouter à mon équipe</button>
   }
 </div>
