@@ -56,6 +56,11 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+             "dev": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "dev"
