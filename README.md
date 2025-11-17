@@ -1,12 +1,12 @@
 # Pokémon Team Builder  
-**Angular 20 • Signals • Standalone Components • PokéAPI**
+** Angular 20 • Signals • Standalone Components • PokéAPI**
 
 > Mini-application Angular 20 pour fetcher la liste des Pokémon via [PokéAPI](https://pokeapi.co) et constituer une **équipe de 6 Pokémon max** (liste à gauche, équipe à droite).  
 > Projet personnel d'apprentissage des features apparues dans Angular 18-20 (signals, resources, state management)
 
 ---
 
-## 🎯 Fonctionnalités
+## Fonctionnalités
 
 - **Fetch automatique** : Charge la liste des 151 Pokémon (Gen 1) au démarrage via PokéAPI.
 - **Affichage liste** : Colonne gauche avec cards pour chaque Pokémon (nom + ID).
@@ -16,7 +16,7 @@
 
 **Démos live idéales :** Load → Clic ajout (x6) → Tentative 7e bloquée → Suppression → Équipe vide.
 
-## 🚀 Lancer le Projet
+## Lancer le Projet
 
 Prérequis : Node.js 20+ et Angular CLI 20+ (`npm i -g @angular/cli@20`).
 
@@ -35,3 +35,6 @@ ng serve
 
 # Tests unitaires
 ng test
+
+## Demo live 
+https://pokemon-team-builder-demo.vercel.app/
