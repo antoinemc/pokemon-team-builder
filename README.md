@@ -35,6 +35,7 @@ ng serve
 
 # Tests unitaires
 ng test
+```
 
 ## Demo live 
 https://pokemon-team-builder-demo.vercel.app/
