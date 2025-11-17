@@ -1,8 +1,8 @@
 # Pokémon Team Builder  
 ** Angular 20 • Signals • Standalone Components • PokéAPI**
 
-> Mini-application Angular 20 pour fetcher la liste des Pokémon via [PokéAPI](https://pokeapi.co) et constituer une **équipe de 6 Pokémon max** (liste à gauche, équipe à droite).  
-> Projet personnel d'apprentissage des features apparues dans Angular 18-20 (signals, resources, state management)
+> Mini-application Angular 20 pour fetcher la liste des Pokémon via [TyraDex](http://tyradex.app/) et constituer une **équipe de 6 Pokémon max** (liste à gauche, équipe à droite).  
+> Projet personnel d'apprentissage des features apparues dans Angular 18-20 (signals, zoneless, state-management, resources..)
 
 ---
 
