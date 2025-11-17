@@ -1,5 +1,5 @@
 # Pokémon Team Builder  
-** Angular 20 • Signals • Standalone Components • PokéAPI**
+** Angular 20 • Signals • Standalone Components • TyraDex API**
 
 > Mini-application Angular 20 pour fetcher la liste des Pokémon via [TyraDex](http://tyradex.app/) et constituer une **équipe de 6 Pokémon max** (liste à gauche, équipe à droite).  
 > Projet personnel d'apprentissage des features apparues dans Angular 18-20 (signals, zoneless, state-management, resources..)
@@ -8,7 +8,7 @@
 
 ## Fonctionnalités
 
-- **Fetch automatique** : Charge la liste des 151 Pokémon (Gen 1) au démarrage via PokéAPI.
+- **Fetch automatique** : Charge la liste des 151 Pokémon (Gen 1) au démarrage via REST API.
 - **Affichage liste** : Colonne gauche avec cards pour chaque Pokémon (nom + ID).
 - **Gestion d'équipe** : Colonne droite – add/delete via button reactif (max 6, avec validation et feedback UI)
 - **UI réactive** : Mise à jour instantanée (pas de re-renders inutiles grâce aux signals).
