@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, inject, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Pokemon, PokemonService } from '../../services/pokemon.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -8,17 +8,11 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './pokemon-item.component.html',
   styleUrls: ['./pokemon-item.component.scss']
 })
-export class PokemonItemComponent implements OnInit {
+export class PokemonItemComponent {
   public pokemonService = inject(PokemonService);
   private toastrService = inject(ToastrService);
   pokemon = input<Pokemon>({} as Pokemon);
   
-
-  constructor() {}
-
-  ngOnInit() {
-  }
-
   addPokemon(): void {
     this.pokemonService.addPokemon(this.pokemon());
 
